@@ -76,26 +76,30 @@ export default function ContactPage() {
               {contact.whatsappDisplay}
             </ContactCard>
             <ContactCard icon={<Mail className="h-5 w-5" aria-hidden />} label="General enquiries" href={mailtoUrl()} className={links.alibaba ? "" : "sm:col-span-2"}>
-              <span className="break-all">{contact.email}</span>
+              <span className="break-all text-base sm:text-[1.05rem]">{contact.email}</span>
             </ContactCard>
             {links.alibaba && (
               <ContactCard icon={<ExternalLink className="h-5 w-5" aria-hidden />} label="Alibaba" href={links.alibaba} external>
                 <span className="underline underline-offset-4">Muhseeq on Alibaba</span>
               </ContactCard>
             )}
-            <div className="flex gap-4 rounded-xl border border-line bg-white p-5 shadow-card sm:col-span-2">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-navy-900 text-white">
-                <MapPin className="h-5 w-5" aria-hidden />
-              </span>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-navy-800">Head office</p>
-                <span className="mt-1.5 block h-0.5 w-6 bg-brand-500" aria-hidden />
-                <address className="mt-2.5 not-italic text-lg leading-relaxed text-navy-900">
-                  {contact.address.map((line) => (
-                    <span key={line} className="block">{line}</span>
-                  ))}
-                </address>
-              </div>
+            <div className="rounded-xl border border-line bg-white p-5 shadow-card sm:col-span-2">
+              <ul className="divide-y divide-line">
+                {contact.locations.map((loc) => (
+                  <li key={loc.label} className="flex gap-4 py-4 first:pt-0 last:pb-0">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-navy-900 text-white">
+                      <MapPin className="h-[18px] w-[18px]" aria-hidden />
+                    </span>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-navy-800">{loc.label}</p>
+                      <span className="mt-1.5 block h-0.5 w-6 bg-brand-500" aria-hidden />
+                      <address className="mt-2.5 not-italic leading-relaxed text-navy-900">
+                        {loc.lines.join(" ")}
+                      </address>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 

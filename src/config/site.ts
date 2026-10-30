@@ -38,6 +38,24 @@ export const siteConfig = {
     email: "touseeq.muhseeq@gmail.com",
     /** Head office address, one line per entry */
     address: ["7-A, Ripple Line, Peoples Colony,", "Near Baba Sweet, Faisalabad, Pakistan."],
+    /**
+     * All company locations — shown on the contact page and in the footer.
+     * Add, remove or reorder entries here.
+     */
+    locations: [
+      {
+        label: "Head Office",
+        lines: ["7-A, Ripple Line, Peoples Colony,", "Near Baba Sweet, Faisalabad, Pakistan."],
+      },
+      {
+        label: "Manufacturing Unit",
+        lines: ["Millat Industrial Estate, Near Hina Sana Textile,", "Millat Town, Faisalabad, Pakistan."],
+      },
+      {
+        label: "Warehouse",
+        lines: ["P-166-167, Street 3, B Block,", "Sir Syed Town, Faisalabad, Pakistan."],
+      },
+    ],
     city: "Faisalabad, Pakistan",
     /** Shown on the contact page */
     responseTime: "Typical response within 24–48 hours (Mon–Sat)",
@@ -53,7 +71,7 @@ export const siteConfig = {
    * ⚠️ Add the real URLs — none were supplied in the reference files.
    */
   links: {
-    alibaba: "",
+    alibaba: "https://muhseeq.m.trustpass.alibaba.com",
     instagram: "",
     linkedin: "",
     facebook: "",

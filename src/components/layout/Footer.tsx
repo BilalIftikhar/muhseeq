@@ -136,12 +136,17 @@ export function Footer() {
                 </a>
               </li>
             )}
-            <li className="flex items-start gap-3">
-              <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-navy-900 text-white">
-                <MapPin className="h-4 w-4" aria-hidden />
-              </span>
-              <address className="not-italic leading-relaxed">{contact.address.join(" ")}</address>
-            </li>
+            {contact.locations.map((loc) => (
+              <li key={loc.label} className="flex items-start gap-3">
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-navy-900 text-white">
+                  <MapPin className="h-4 w-4" aria-hidden />
+                </span>
+                <div className="leading-relaxed">
+                  <p className="text-xs font-bold uppercase tracking-wider text-gold-600">{loc.label}</p>
+                  <address className="not-italic">{loc.lines.join(" ")}</address>
+                </div>
+              </li>
+            ))}
           </ul>
           <div className="mt-5 flex items-center gap-3 border-t border-line pt-4">
             <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-navy-900 text-white">
