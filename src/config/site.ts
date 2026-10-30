@@ -53,7 +53,7 @@ export const siteConfig = {
       },
       {
         label: "Warehouse",
-        lines: ["P-166-167, Street 3, B Block,", "Sir Syed Town, Faisalabad, Pakistan."],
+        lines: ["Street 3, B Block,", "Sir Syed Town, Faisalabad, Pakistan."],
       },
     ],
     city: "Faisalabad, Pakistan",
