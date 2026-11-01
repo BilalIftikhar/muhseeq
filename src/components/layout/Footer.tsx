@@ -161,7 +161,15 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <div className="container-site flex flex-col items-center justify-between gap-1 py-4 text-xs text-navy-800 sm:flex-row">
-          <p>© {new Date().getFullYear()} Muhseeq. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Muhseeq. All rights reserved.{" "}
+            <span className="whitespace-nowrap">
+              Developed by{" "}
+              <a href="https://7code.digital" target="_blank" rel="noopener" className="font-semibold hover:text-gold-600">
+                7CODE
+              </a>
+            </span>
+          </p>
           <p>{contact.city}</p>
         </div>
       </div>
